@@ -1,0 +1,38 @@
+def blood_type_personality():
+    # 血液型と性格の情報を辞書で定義
+    personality_traits = {
+        'A': {
+            'personality': '真面目で几帳面、責任感が強い',
+            'compatibility': ['A', 'AB']
+        },
+        'B': {
+            'personality': '自由奔放で創造力が豊か',
+            'compatibility': ['B', 'AB']
+        },
+        'AB': {
+            'personality': '合理的で創造力があり、独自の考え方を持つ',
+            'compatibility': ['A', 'B', 'AB', 'O']
+        },
+        'O': {
+            'personality': '社交的で明るく、行動力がある',
+            'compatibility': ['O']
+        }
+    }
+
+    # 入力を受け取る
+    blood_type = input('血液型を入力してください: ').upper()
+
+    # 性格と相性の取得
+    blood_info = personality_traits.get(blood_type)
+
+    # 結果の表示
+    if blood_info:
+        personality = blood_info['personality']
+        compatibility = blood_info['compatibility']
+        print('あなたの性格は', personality, 'です。')
+        print('相性の良い血液型は', compatibility, 'です。')
+    else:
+        print('該当する血液型の情報はありません。')
+
+# 血液型性格診断プログラムの実行
+blood_type_personality()
